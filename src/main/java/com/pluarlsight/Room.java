@@ -8,6 +8,11 @@ public class Room {
     private boolean isDirty;
     private boolean isAvailable;
 
+    public Room(boolean isDirty, boolean isOccupied) {
+        this.isDirty = isDirty;
+        this.isOccupied = isOccupied;
+    }
+
     public int getNumberOfBeds() {
         return numberOfBeds;
     }

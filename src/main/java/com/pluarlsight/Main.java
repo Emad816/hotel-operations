@@ -7,7 +7,8 @@ public class Main {
 
         System.out.println(emad.getReservationTotal());
 
-        Room n0718 = new Room()
+        Room n0718 = new Room(false, false );
+        System.out.println(n0718.isAvailable());
 
 
 
