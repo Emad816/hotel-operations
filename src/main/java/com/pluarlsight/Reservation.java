@@ -58,7 +58,9 @@ public class Reservation {
                 return price + (price * 0.10);
             }
             return price;
+        }else {
+            System.out.println("invalid room type");
         }
-        return -1;
+        return price;
     }
 }

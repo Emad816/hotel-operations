@@ -6,5 +6,11 @@ public class Main {
         Reservation emad = new Reservation("king", 5);
 
         System.out.println(emad.getReservationTotal());
+
+        Room n0718 = new Room()
+
+
+
+
     }
 }
