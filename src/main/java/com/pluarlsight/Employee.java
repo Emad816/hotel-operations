@@ -6,6 +6,8 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+    private double startTime;
+    private double endTime;
 
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -83,9 +85,14 @@ public class Employee {
         return totalPay;
     }
 
-    public void punchIn(int time) {
-        int startTime = time;
+    public void punchIn(double time) {
+        this.startTime = time;
     }
 
-    p
+    public void punchOut(double time) {
+        this.endTime = time;
+
+        hoursWorked += endTime - startTime;
+        System.out.println("Punsh in at " + startTime + " Punch out at " + time + " hours worked " + (endTime - startTime));
+    }
 }

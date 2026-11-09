@@ -26,7 +26,12 @@ public class Main {
 
         // Testing employee class
         Employee employee = new Employee(047, "emad",
-                "HR", 21.00, 55);
+                "HR", 21.00, 20);
+
+        employee.punchIn(08.00);
+        employee.punchOut(16.00);
+        System.out.println("Total hours worked : " + employee.getHoursWorked());
+
         System.out.println(employee.getTotalPay());
 
 
