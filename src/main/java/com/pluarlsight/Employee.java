@@ -84,15 +84,25 @@ public class Employee {
         }
         return totalPay;
     }
-
-    public void punchIn(double time) {
-        this.startTime = time;
-    }
-
-    public void punchOut(double time) {
-        this.endTime = time;
-
-        hoursWorked += endTime - startTime;
-        System.out.println("Punsh in at " + startTime + " Punch out at " + time + " hours worked " + (endTime - startTime));
+//old methods
+//    public void punchIn(double time) {
+//        this.startTime = time;
+//    }
+//
+//    public void punchOut(double time) {
+//        this.endTime = time;
+//
+//        hoursWorked += endTime - startTime;
+//        System.out.println("Punsh in at " + startTime + " Punch out at " + time + " hours worked " + (endTime - startTime));
+//    }
+    public void punchTimeCard(double time) {
+        if (startTime < 0) {
+            startTime = time;
+        }else {
+            endTime = time;
+            hoursWorked += endTime - startTime;
+            System.out.println("Punsh in at " + startTime
+                    + " Punch out at " + time + " hours worked " + (endTime - startTime));
+        }
     }
 }
