@@ -81,6 +81,11 @@ public class Employee {
             totalPay = (40 * payRate) + ((hoursWorked - 40) * (1.5 * payRate));
         }
         return totalPay;
-
     }
+
+    public void punchIn(int time) {
+        int startTime = time;
+    }
+
+    p
 }
