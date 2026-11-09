@@ -25,6 +25,11 @@ public class Room {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+
+        if (!isOccupied && !isDirty){
+            return true;
+        }else  {
+            return false;
+        }
     }
 }
