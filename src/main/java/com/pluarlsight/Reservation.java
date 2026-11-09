@@ -21,19 +21,12 @@ public class Reservation {
     }
 
     public double getPrice() {
-        if (roomType.equals("king")) {
-            double price = 139.00 * numberOfNights;
-            if(isWeekend) {
-                return price + (price * 0.10);
-            }
-            return price;
-        } else if (roomType.equals("double")) {
-            double price = 124.00 * numberOfNights;
-            if(isWeekend) {
-                return price + (price * 0.10);
-            }
-            return price;
+        switch (roomType){
+            case "king" -> price = 139.00;
+            case "double" -> price = 124.00;
+            default -> price = -1;
         }
+        return price;
     }
 
     public int getNumberOfNights() {
@@ -53,7 +46,19 @@ public class Reservation {
     }
 
     public double getReservationTotal() {
-
-        return price * numberOfNights;
+        if (roomType.equals("king")) {
+            double price = 139.00 * numberOfNights;
+            if(isWeekend) {
+                return price + (price * 0.10);
+            }
+            return price;
+        } else if (roomType.equals("double")) {
+            double price = 124.00 * numberOfNights;
+            if(isWeekend) {
+                return price + (price * 0.10);
+            }
+            return price;
+        }
+        return -1;
     }
 }
