@@ -26,13 +26,13 @@ public class Reservation {
             if(isWeekend) {
                 return price + (price * 0.10);
             }
-            return 139.00 * numberOfNights;
+            return price;
         } else if (roomType.equals("double")) {
             double price = 124.00 * numberOfNights;
             if(isWeekend) {
                 return price + (price * 0.10);
             }
-            return 124.00 * numberOfNights;
+            return price;
         }
     }
 
