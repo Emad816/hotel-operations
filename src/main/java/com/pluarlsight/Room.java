@@ -37,4 +37,20 @@ public class Room {
             return false;
         }
     }
+
+    public void checkIn() {
+        isOccupied = true;
+        isDirty =  true;
+    }
+
+    public void checkOut() {
+        isOccupied = false;
+        isDirty = true;
+    }
+
+    public void cleanRoom() {
+        isOccupied = false;
+        isDirty =  false;
+        isAvailable = true;
+    }
 }
