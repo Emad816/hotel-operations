@@ -25,14 +25,14 @@ public class Main {
 
 
         // Testing employee class
-        Employee employee = new Employee(047, "emad",
-                "HR", 21.00, 20);
+        Employee employee1 = new Employee(047, "emad",
+                "HR", 20.00, 32);
 
-        employee.punchIn(08.00);
-        employee.punchOut(16.00);
-        System.out.println("Total hours worked : " + employee.getHoursWorked());
+        employee1.punchIn(08.00);
+        employee1.punchOut(16.00);
+        System.out.println("Total hours worked : " + employee1.getHoursWorked());
 
-        System.out.println(employee.getTotalPay());
+        System.out.println("total pay " + employee1.getTotalPay() + "$");
 
 
 
