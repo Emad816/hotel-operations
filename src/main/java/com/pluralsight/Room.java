@@ -1,4 +1,4 @@
-package com.pluarlsight;
+package com.pluralsight;
 
 public class Room {
 
@@ -6,11 +6,12 @@ public class Room {
     private double price;
     private boolean isOccupied;
     private boolean isDirty;
-    private boolean isAvailable;
 
-    public Room(boolean isDirty, boolean isOccupied) {
-        this.isDirty = isDirty;
-        this.isOccupied = isOccupied;
+    public Room() {
+        this.numberOfBeds = 0;
+        this.price = 0;
+        this.isOccupied = false;
+        this.isDirty = false;
     }
 
     public int getNumberOfBeds() {
@@ -49,8 +50,11 @@ public class Room {
     }
 
     public void cleanRoom() {
-        isOccupied = false;
-        isDirty =  false;
-        isAvailable = true;
+        if (!isOccupied) {
+            isDirty =  false;
+        }else {
+            System.out.println("Room is till occupied!");
+        }
+
     }
 }
