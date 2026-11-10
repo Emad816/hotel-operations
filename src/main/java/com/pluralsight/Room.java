@@ -40,8 +40,12 @@ public class Room {
     }
 
     public void checkIn() {
-        isOccupied = true;
-        isDirty =  true;
+        if(isAvailable()) {
+            isOccupied = true;
+            isDirty = true;
+        }else {
+            System.out.println("Room is not available");
+        }
     }
 
     public void checkOut() {
@@ -51,9 +55,9 @@ public class Room {
 
     public void cleanRoom() {
         if (!isOccupied) {
-            isDirty =  false;
+            isDirty = false;
         }else {
-            System.out.println("Room is till occupied!");
+            System.out.println("Room is sill occupied!");
         }
 
     }
