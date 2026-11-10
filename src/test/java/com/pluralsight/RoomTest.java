@@ -36,7 +36,7 @@ class RoomTest {
 
     @Test
     void cleanRoom() {
-        //room should be not dirty and not occupied
+        //room should be not dirty
         //arrange
         Room f12n02 = new Room();
 
@@ -44,6 +44,6 @@ class RoomTest {
         f12n02.cleanRoom();
 
         //assert
-        assertEquals();
+        assertEquals(false, f12n02.isDirty());
     }
 }
