@@ -8,6 +8,7 @@ public class Employee {
     private double hoursWorked;
     private double startTime;
     private double endTime;
+    private boolean isPunchedIn;
 
     public Employee(int employeeId, String name, String department, double payRate, double hoursWorked) {
         this.employeeId = employeeId;
@@ -96,13 +97,15 @@ public class Employee {
 //        System.out.println("Punsh in at " + startTime + " Punch out at " + time + " hours worked " + (endTime - startTime));
 //    }
     public void punchTimeCard(double time) {
-        if (startTime < 0) {
+        if (!isPunchedIn) {
             startTime = time;
+            isPunchedIn = true;
         }else {
             endTime = time;
             hoursWorked += endTime - startTime;
             System.out.println("Punsh in at " + startTime
                     + " Punch out at " + time + " hours worked " + (endTime - startTime));
+            isPunchedIn = false;
         }
     }
 }

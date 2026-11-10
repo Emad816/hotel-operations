@@ -28,13 +28,12 @@ public class Main {
         Employee employee1 = new Employee(047, "emad",
                 "HR", 20.00, 32);
 
-        employee1.punchIn(08.00);
-        employee1.punchOut(16.00);
+        employee1.punchTimeCard(8);
+        employee1.punchTimeCard(16);
+
+        System.out.println(employee1);
         System.out.println("Total hours worked : " + employee1.getHoursWorked());
 
         System.out.println("total pay " + employee1.getTotalPay() + "$");
-
-
-
     }
 }
