@@ -31,12 +31,7 @@ public class Room {
     }
 
     public boolean isAvailable() {
-
-        if (!isOccupied && !isDirty){
-            return true;
-        }else  {
-            return false;
-        }
+        return !isDirty && !isOccupied;
     }
 
     public void checkIn() {
