@@ -3,37 +3,22 @@ package com.pluarlsight;
 public class Main {
     public static void main(String[] args) {
 
-        //testing reservation class
-        Reservation emad = new Reservation("king", 5);
-
-        System.out.println(emad.getReservationTotal());
-
-        //testing room class
-        Room n0718 = new Room(false, false );
-
-        System.out.println(n0718.isAvailable());
-
-        n0718.checkIn();
-        System.out.println(n0718.isDirty());
-
-        n0718.checkOut();
-        System.out.println(n0718.isOccupied());
-
-        n0718.cleanRoom();
-        System.out.println(n0718.isDirty());
-
 
 
         // Testing employee class
-        Employee employee1 = new Employee(047, "emad",
-                "HR", 20.00, 32);
+        Employee emad = new Employee(047, "emad",
+                "HR", 20.00, 2);
 
-        employee1.punchTimeCard(8);
-        employee1.punchTimeCard(16);
+        //punch time card method
+        emad.punchTimeCard(8);
+        emad.punchTimeCard(16);
 
-        System.out.println(employee1);
-        System.out.println("Total hours worked : " + employee1.getHoursWorked());
+        //punch in & out with local date method
+        emad.punchIn(08.06);
+        emad.punchOut();
 
-        System.out.println("total pay " + employee1.getTotalPay() + "$");
+        System.out.println("Total hours worked : " + emad.getHoursWorked());
+
+
     }
 }

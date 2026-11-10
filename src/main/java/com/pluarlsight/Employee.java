@@ -1,5 +1,7 @@
 package com.pluarlsight;
 
+import java.time.LocalTime;
+
 public class Employee {
     private int employeeId;
     private String name;
@@ -85,17 +87,21 @@ public class Employee {
         }
         return totalPay;
     }
-//old methods
-//    public void punchIn(double time) {
-//        this.startTime = time;
-//    }
-//
-//    public void punchOut(double time) {
-//        this.endTime = time;
-//
-//        hoursWorked += endTime - startTime;
-//        System.out.println("Punsh in at " + startTime + " Punch out at " + time + " hours worked " + (endTime - startTime));
-//    }
+
+    //punch in and punch out method with double parameters
+    public void punchIn(double time) {
+        this.startTime = time;
+    }
+
+    public void punchOut(double time) {
+        this.endTime = time;
+
+        hoursWorked += endTime - startTime;
+        System.out.println("Punsh in at " + startTime
+                + " Punch out at " + time + " hours worked " + (endTime - startTime));
+    }
+
+    //Punch in time card method
     public void punchTimeCard(double time) {
         if (!isPunchedIn) {
             startTime = time;
@@ -108,4 +114,22 @@ public class Employee {
             isPunchedIn = false;
         }
     }
+
+    //d
+    public void punchIn() {
+        LocalTime timeNow = LocalTime.now();
+        this.startTime = timeNow.getHour() + timeNow.getMinute()/100.0;
+        System.out.println(startTime);
+    }
+
+    public void punchOut() {
+        LocalTime timeNow = LocalTime.now();
+        this.endTime = timeNow.getHour() + timeNow.getMinute()/100.0;
+        hoursWorked += endTime - startTime;
+        System.out.println("Punch in at " + startTime
+                + " Punch out at " + endTime + " hours worked " + (endTime - startTime));
+    }
+
+
+
 }
