@@ -103,7 +103,7 @@ public class Employee {
         }else {
             endTime = time;
             hoursWorked += endTime - startTime;
-            System.out.println("Punsh in at " + startTime
+            System.out.println("Punch in at " + startTime
                     + " Punch out at " + time + " hours worked " + (endTime - startTime));
             isPunchedIn = false;
         }
