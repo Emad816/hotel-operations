@@ -42,4 +42,19 @@ public class Hotel {
     public int getBookedBasicRooms() {
         return bookedBasicRooms;
     }
+
+    public boolean bookRoom(int roomCount, boolean suite) {
+        if (suite) {
+            if(roomCount <= bookedSuites)
+                this.bookedSuites += roomCount;
+                return true;
+        }else {
+            if (roomCount <= bookedBasicRooms) {
+                this.bookedBasicRooms = roomCount;
+                return true;
+            }
+
+        }
+        return false;
+    }
 }
