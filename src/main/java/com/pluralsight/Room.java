@@ -44,8 +44,12 @@ public class Room {
     }
 
     public void checkOut() {
-        isOccupied = false;
-        isDirty = true;
+        if(isOccupied) {
+            isOccupied = false;
+            isDirty = true;
+        }else {
+            System.out.println("No check in found to check out");
+        }
     }
 
     public void cleanRoom() {
