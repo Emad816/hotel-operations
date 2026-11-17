@@ -88,13 +88,28 @@ public class Employee {
         return totalPay;
     }
 
+    public double getStartTime() {
+        return startTime;
+    }
+
+    public double getEndTime() {
+        return endTime;
+    }
+
+    public boolean isPunchedIn() {
+        return isPunchedIn;
+    }
+
+
     //punch in and punch out method with double parameters
     public void punchIn(double time) {
+        isPunchedIn = true;
         this.startTime = time;
     }
 
     public void punchOut(double time) {
         this.endTime = time;
+        isPunchedIn = false;
 
         hoursWorked += endTime - startTime;
         System.out.println("Punsh in at " + startTime
@@ -117,15 +132,17 @@ public class Employee {
 
     //Punch in using current time
     public void punchIn() {
+        isPunchedIn = true;
         LocalTime timeNow = LocalTime.now();
-        this.startTime = timeNow.getHour() + timeNow.getMinute()/100.0;
+        this.startTime = timeNow.getHour() + timeNow.getMinute()/60.0;
         System.out.println("Punch in at " + startTime);
     }
 
     //Punch out using current time
     public void punchOut() {
+        isPunchedIn = false;
         LocalTime timeNow = LocalTime.now();
-        this.endTime = timeNow.getHour() + timeNow.getMinute()/100.0;
+        this.endTime = timeNow.getHour() + timeNow.getMinute()/60.0;
         hoursWorked += endTime - startTime;
         System.out.println("Punch in at " + startTime
                 + " Punch out at " + endTime + " hours worked " + (endTime - startTime));
