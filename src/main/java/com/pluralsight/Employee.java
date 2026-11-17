@@ -147,7 +147,4 @@ public class Employee {
         System.out.println("Punch in at " + startTime
                 + " Punch out at " + endTime + " hours worked " + (endTime - startTime));
     }
-
-
-
 }
