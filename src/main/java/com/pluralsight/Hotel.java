@@ -45,16 +45,25 @@ public class Hotel {
 
     public boolean bookRoom(int roomCount, boolean suite) {
         if (suite) {
-            if(roomCount <= bookedSuites)
+            if(roomCount <= getAvailableSuites() && roomCount > 0) {
                 this.bookedSuites += roomCount;
                 return true;
+            }
         }else {
-            if (roomCount <= bookedBasicRooms) {
-                this.bookedBasicRooms = roomCount;
+            if (roomCount <= getAvailableRooms() && roomCount > 0) {
+                this.bookedBasicRooms += roomCount;
                 return true;
             }
 
         }
         return false;
+    }
+
+    public int getAvailableRooms() {
+        return numberOfRooms-bookedBasicRooms;
+    }
+
+    public  int getAvailableSuites() {
+        return numberOfSuites-bookedSuites;
     }
 }

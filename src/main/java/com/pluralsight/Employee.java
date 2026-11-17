@@ -101,7 +101,7 @@ public class Employee {
                 + " Punch out at " + time + " hours worked " + (endTime - startTime));
     }
 
-    //Punch in time card method
+    //Punch in & out time card method
     public void punchTimeCard(double time) {
         if (!isPunchedIn) {
             startTime = time;
@@ -115,13 +115,14 @@ public class Employee {
         }
     }
 
-    //d
+    //Punch in using current time
     public void punchIn() {
         LocalTime timeNow = LocalTime.now();
         this.startTime = timeNow.getHour() + timeNow.getMinute()/100.0;
-        System.out.println(startTime);
+        System.out.println("Punch in at " + startTime);
     }
 
+    //Punch out using current time
     public void punchOut() {
         LocalTime timeNow = LocalTime.now();
         this.endTime = timeNow.getHour() + timeNow.getMinute()/100.0;
